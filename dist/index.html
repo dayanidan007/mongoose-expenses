@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="headline">הוספת הוצאה</div>
+        <div id="form">
+        <input type="text" id="item" placeholder="item">
+        <input type="number" id="amount" placeholder="amount">
+        <input type="text" id="group" placeholder="group">
+        <button id="add">add</button>
+    </div>
+    <button id="render">הצג</button>
+    </div>
+    <div id="posts"></div>
+    <div id="newPost"></div>
+    </div>
+
+    <script id="expenses-template" type="text/x-handlebars-template">
+    <div class="expense">
+        {{#each data}}
+        <div class="text">{{item}}</div>
+        <div class="text">{{amount}}</div>
+        <div class="text">{{date}}</div>
+        <div class="text">{{group}}</div>
+    {{/each}}
+    </div>
+    </script>
+
+    <script id="newExpenses-template" type="text/x-handlebars-template">
+    <div class="expense">
+        <div class="text">{{item}}</div>
+        <div class="text">{{amount}}</div>
+        <div class="text">{{date}}</div>
+        <div class="text">{{group}}</div>
+    </div>
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="ExpenseManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
